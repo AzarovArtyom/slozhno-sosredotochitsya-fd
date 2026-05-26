@@ -74,11 +74,9 @@
 }
 
 .header__theme-menu {
-  display: grid;
   justify-self: end;
   align-self: center;
   margin-block-start: 11px;
-  gap: 10px;
 }
 
 .header__theme-menu-list {
