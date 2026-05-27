@@ -9,9 +9,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-color: var(--bg-color);
-  padding: 10px;
-  overflow: auto;
-  margin: 0;
+  margin: 0 auto;
 }
 
 .header {
@@ -19,19 +17,19 @@
   min-height: 668px;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  justify-content: center;
   align-items: center;
   position: relative;
+  padding: 10px;
 }
 
 .header__decoration-element {
-  color: var(--accent-color);
+  color: var(--rec-color);
   font-size: 18px;
   text-transform: uppercase;
   position: absolute;
-  top: 0;
-  right: 10px;
-  line-height: 25px;
+  top: 8px;
+  right: 19px;
+  line-height: 139%;
 }
 
 .header__decoration-element::after {
@@ -40,8 +38,8 @@
   width: 9px;
   height: 9px;
   border-radius: 100%;
-  background-color: var(--accent-color);
-  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--rec-color);
+  box-shadow: 0 0 4px 2px var(--rec-color);
   margin-inline-start: 10px;
 }
 
@@ -57,8 +55,8 @@
   width: 25px;
   height: 24px;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
 }
 
 .decorated-zone::after {
@@ -69,14 +67,13 @@
   width: 25px;
   height: 24px;
   position: absolute;
-  bottom: 20px;
-  left: 0;
+  bottom: 10px;
+  left: 10px;
 }
 
 .header__theme-menu {
   justify-self: end;
   align-self: center;
-  margin-block-start: 11px;
 }
 
 .header__theme-menu-list {
@@ -126,7 +123,6 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 130%;
-  margin-block-end: 18px;
 }
 
 .title-decor {
@@ -137,7 +133,9 @@
 .content {
   display: grid;
   gap: 50px;
+  padding: 0 10px;
   margin-block-start: 35px;
+  margin-block-end: 30px;
 }
 
 .section {
@@ -157,16 +155,12 @@
   gap: 20px;
 }
 
-.card {
-  display: grid;
-  gap: 10px;
-}
-
 .card__title {
   font-weight: 700;
   font-size: 18px;
   line-height: 130%;
   color: var(--title-decor-color);
+  margin-block-end: 10px;
 }
 
 .title-normal-weight {
@@ -202,7 +196,6 @@
 .gallery {
   display: grid;
   gap: 10px;
-  margin-block-end: 45px;
 }
 
 .gallery__grid {
@@ -222,6 +215,7 @@
   display: grid;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 
 .footer__title {
@@ -235,39 +229,43 @@
 }
 
 @media (width >= 768px) {
-  .page {
+  .header {
     padding: 20px;
   }
-  .decorated-zone::after {
-    bottom: 37px;
-    left: 0;
+
+  .header__decoration-element {
+    top: 20px;
+    right: 30px;
   }
 
-  .header__theme-menu {
-    margin-block-start: 46px;
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
   }
+
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
+
   .header__title,
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
   .header__title {
-    margin-block-start: 19px;
     margin-inline-start: -20px;
-  }
-  .footer__title {
-    margin-block-end: 28px;
   }
 
   .header__description {
     inline-size: 50%;
     justify-self: end;
-    margin-block-end: 3px;
   }
 
   .content {
-    margin-block-start: 68px;
-    margin-block-end: 42px;
     gap: 80px;
+    padding: 0 20px;
+    margin-block-start: 60px;
+    margin-block-end: 60px;
   }
 
   .section-sidebar {
@@ -300,39 +298,38 @@
   .gallery__image-street {
     grid-column: span 2;
   }
+  .footer {
+    padding: 20px;
+  }
 }
 
 @media (width >= 1024px) {
+  .header {
+    padding: 20px;
+  }
+
   .header__theme-menu {
     justify-self: center;
     align-self: start;
-    margin-block-start: 3px;
   }
   .header__theme-menu-list {
     flex-direction: row;
   }
   .header__title {
-    margin-block-end: 45px;
-    margin-inline-start: -237px;
+    margin-inline-start: -20px;
   }
   .header__description {
-    min-width: 89%;
-    margin-block-end: 74px;
-    margin-inline-end: -218px;
+    max-width: 50%;
   }
   .content {
-    margin-block-start: 44px;
-    margin-block-end: 34px;
+    padding: 0 20px;
   }
   .section__title-container {
     max-width: 260px;
   }
-  .card {
-    display: block;
-  }
+
   .card__title {
     align-self: start;
-    margin-block-end: 10px;
   }
   .section-sidebar {
     gap: 10px;
@@ -342,12 +339,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
-  .footer__title {
-    margin-block-end: 30;
-    margin-inline-start: auto;
-  }
-  .decorated-zone::after {
-    bottom: 39px;
-    left: 0;
+  .footer {
+    padding: 20px;
   }
 }
